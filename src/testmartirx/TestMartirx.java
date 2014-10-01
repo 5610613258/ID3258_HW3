@@ -22,7 +22,7 @@ public class TestMartirx {
         int set;
         int row;
         int column;
-        
+
         // Input set, column, row
         System.out.print("Enter Matrix set(s) : ");
         set = sc.nextInt();
@@ -32,25 +32,54 @@ public class TestMartirx {
         row = sc.nextInt();
         // Input Number in Matrix
         int[][][] n = new int[set][row][column];
-        for(int i = 0;i < set;i++){
-            System.out.print("Enter " + "No." + (i+1) + " Number : ");
-            for(int j = 0;j < row;j++){
-                for(int k = 0;k < column;k++){
+        for (int i = 0; i < set; i++) {
+            System.out.print("Enter " + "No." + (i + 1) + " Number : ");
+            for (int j = 0; j < row; j++) {
+                for (int k = 0; k < column; k++) {
                     n[i][j][k] = sc.nextInt();
                 }
             }
         }
-       
-        Matrix cm = new Matrix(row, column);
-        cm.add(set, row, column, n);
-        cm.subtact(set, row, column, n);
-        cm.multipal(set, row, column, n);
-        cm.printadd(column, row);
-        cm.printsub(column, row);
-        cm.printmul(column, row);
-        cm.transpore(cm.add,row,column);
-        cm.transpore(cm.sub,row,column);
-        cm.transpore(cm.mul,row,column);
+
+        Matrix m = new Matrix(row, column);
+        ComplexMatrix cm = new ComplexMatrix(row, column);
+        System.out.println("Normal Matrix");
+        m.add(set, row, column, n);
+        m.subtact(set, row, column, n);
+        m.multipal(set, row, column, n);
+        m.printadd(column, row);
+        m.printsub(column, row);
+        m.printmul(column, row);
+        m.transpore(m.add, row, column);
+        m.transpore(m.sub, row, column);
+        m.transpore(m.mul, row, column);
+        System.out.println("Complex Matrix");
+        cm.printadd(m.add, column, row);
+        cm.printsub(m.sub, column, row);
+        cm.printmul(m.mul, column, row);
+        cm.transpore(m.add, row, column);
+        cm.transpore(m.sub, row, column);
+        cm.transpore(m.mul, row, column);
+
+        // Input Number in Matrix
+        int[][][] N = new int[set][row][column];
+        for (int i = 0; i < set; i++) {
+            System.out.print("Enter " + "No." + (i + 1) + " Number (0 or 1): ");
+            for (int j = 0; j < row; j++) {
+                for (int k = 0; k < column; k++) {
+                    N[i][j][k] = sc.nextInt();
+                }
+            }
+        }
+        BinaryMatrix bm = new BinaryMatrix(row, column);
+        System.out.println("Binary Matrix");
+        bm.add(set, row, column, N);
+        bm.printadd(column, row);
+        bm.transpore(bm.add, row, column);
+        
+        BinaryComplexMatrix bcm = new BinaryComplexMatrix(row, column);
+        bcm.transpore(bm.add, row, column);
+        bcm.printadd(column, row);
     }
 
 }

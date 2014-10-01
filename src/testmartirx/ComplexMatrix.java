@@ -17,7 +17,7 @@ public class ComplexMatrix extends Matrix {
 
     @Override
     public void transpore(int mul[][], int row, int column) {
-        System.out.println("Transpore");
+        System.out.println("Transpore(Complex)");
         for (int i = 0; i < column; i++) {
             for (int j = 0; j < row; j++) {
                 System.out.print(mul[j][i] + "+0i");
@@ -30,7 +30,7 @@ public class ComplexMatrix extends Matrix {
     }
 
     public void printadd(int add[][], int column, int row) {
-        System.out.println("Add Matrix");
+        System.out.println("Add Complex Matrix");
         for (int j = 0; j < row; j++) {
             for (int k = 0; k < column; k++) {
                 System.out.print(add[j][k] + "+0i");
@@ -43,7 +43,7 @@ public class ComplexMatrix extends Matrix {
     }
 
     public void printsub(int sub[][], int column, int row) {
-        System.out.println("Subtact Matrix");
+        System.out.println("Subtact Complex Matrix");
         for (int j = 0; j < row; j++) {
             for (int k = 0; k < column; k++) {
                 System.out.print(sub[j][k] + "+0i");
@@ -56,7 +56,7 @@ public class ComplexMatrix extends Matrix {
     }
 
         public void printmul(int mul[][],int column, int row) {
-        System.out.println("Multiplication Matrix");
+        System.out.println("Multiplication Complex Matrix");
         for (int j = 0; j < row; j++) {
             for (int k = 0; k < column; k++) {
                 System.out.print(mul[j][k] + "+0i");
